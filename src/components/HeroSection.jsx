@@ -1,7 +1,10 @@
 import { ArrowDown } from "lucide-react";
+import { RocketLaunch } from "./RocketLaunch";
 
 export const HeroSection = () => {
   return (
+    <>
+    <RocketLaunch/>
     <section
       id="hero"
       className="relative min-h-screen flex items-center justify-center px-4"
@@ -55,5 +58,6 @@ export const HeroSection = () => {
         <ArrowDown className="h-5 w-5 text-primary" />
       </div>
     </section>
+    </>
   );
 };

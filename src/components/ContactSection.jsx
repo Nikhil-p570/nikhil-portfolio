@@ -121,7 +121,7 @@ export const ContactSection = () => {
                 <a href="https://www.linkedin.com/in/nikhil-pabbisetti/" target="_blank" rel="noopener noreferrer">
                   <Linkedin />
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a href="https://x.com/Nikki_2612" target="_blank" rel="noopener noreferrer">
                   <Twitter />
                 </a>
                 <a href="#" target="_blank" rel="noopener noreferrer">

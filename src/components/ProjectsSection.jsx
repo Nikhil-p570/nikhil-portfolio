@@ -6,9 +6,18 @@ const projects = [
     title: "GPS Attendance System",
     description: "System to mark the attendance using GPS",
     image: "/projects/gpsattendance.png",
-    tags: ["React", "TailwindCSS", "MongoDB"],
+    tags: ["React", "TailwindCSS", "MongoDB","Node.js"],
     demoUrl: "#",
     githubUrl: "https://github.com/Nikhil-p570/GPS_Attendance_System-",
+    },
+    {
+        id: 1,
+    title: "Team Up",
+    description: "A platform to connect with like-minded people and collaborate on projects.",
+    image: "/projects/teamup.png",
+    tags: ["JavaScript", "React.js", "Node.js", "Firebase"],
+    demoUrl: "https://teamupns.vercel.app/",
+    githubUrl: "https://github.com/Subham8705/Teamup.git",
     }
 //   {
 //     id: 1,

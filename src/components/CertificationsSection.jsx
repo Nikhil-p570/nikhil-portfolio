@@ -1,4 +1,4 @@
-import { Download, Eye, ExternalLink, X } from "lucide-react";
+import { Eye, ExternalLink, X } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -10,8 +10,7 @@ const certifications = [
     issueDate: "July 2025",
     credentialId: "",
     image: "https://res.cloudinary.com/dfc8a9imb/image/upload/v1754760308/nikhil_aws-ai_ml-scholar_badge_m3sxmx.webp",
-    credentialUrl: "https://cdn.getblueshift.com/bee/images/ed5b8755-0989-4944-9ca5-287bb68e4a22/Certification%20Badge%2010_1.jpg",
-    downloadUrl: "https://cdn.getblueshift.com/bee/images/ed5b8755-0989-4944-9ca5-287bb68e4a22/Certification%20Badge%2010_1.jpg"
+    credentialUrl: "https://cdn.getblueshift.com/bee/images/ed5b8755-0989-4944-9ca5-287bb68e4a22/Certification%20Badge%2010_1.jpg"
   },
   {
     id: 2,
@@ -20,8 +19,7 @@ const certifications = [
     issueDate: "July 2025",
     credentialId: "6ccff52c-3823-49b6-a6b4-a9c2d5c3d3bc",
     image: "https://res.cloudinary.com/dfc8a9imb/image/upload/v1754760308/aws-educate-machine-learning-foundations_lljz5o.png",
-    credentialUrl: "https://www.credly.com/earner/earned/badge/6ccff52c-3823-49b6-a6b4-a9c2d5c3d3bc",
-    downloadUrl: "https://www.credly.com/earner/earned/badge/6ccff52c-3823-49b6-a6b4-a9c2d5c3d3bc"
+    credentialUrl: "https://www.credly.com/earner/earned/badge/6ccff52c-3823-49b6-a6b4-a9c2d5c3d3bc"
   },
   {
     id: 3,
@@ -30,8 +28,7 @@ const certifications = [
     issueDate: "July 2025",
     credentialId: "07ffeaac-5966-11f0-96d3-8f73ca1868f4",
     image: "https://res.cloudinary.com/dfc8a9imb/image/upload/v1754761021/intro_to_gen_ai_exobh3.png",
-    credentialUrl: "https://www.udacity.com/certificate/e/07ffeaac-5966-11f0-96d3-8f73ca1868f4",
-    downloadUrl: "https://www.udacity.com/certificate/e/07ffeaac-5966-11f0-96d3-8f73ca1868f4"
+    credentialUrl: "https://www.udacity.com/certificate/e/07ffeaac-5966-11f0-96d3-8f73ca1868f4"
   },
   {
     id: 4,
@@ -40,8 +37,7 @@ const certifications = [
     issueDate: "July 2025",
     credentialId: "",
     image: "https://res.cloudinary.com/dfc8a9imb/image/upload/v1754761232/java_hackerrank_x7azmf.png",
-    credentialUrl: "https://www.hackerrank.com/certificates/9426f7efa28a",
-    downloadUrl: "https://www.hackerrank.com/certificates/9426f7efa28a"
+    credentialUrl: "https://www.hackerrank.com/certificates/9426f7efa28a"
   },
   {
     id: 5,
@@ -50,8 +46,7 @@ const certifications = [
     issueDate: "July 2025",
     credentialId: "",
     image: "https://res.cloudinary.com/dfc8a9imb/image/upload/v1754761230/problem_solvinghackerrank_oiwmjt.png",
-    credentialUrl: "https://www.hackerrank.com/certificates/bb13cb3038a4",
-    downloadUrl: "https://www.hackerrank.com/certificates/bb13cb3038a4"
+    credentialUrl: "https://www.hackerrank.com/certificates/bb13cb3038a4"
   },
   {
     id: 6,
@@ -60,8 +55,7 @@ const certifications = [
     issueDate: "July 2025",
     credentialId: "",
     image: "https://res.cloudinary.com/dfc8a9imb/image/upload/v1754761231/python_hacker_rank_s7zzwe.png",
-    credentialUrl: "https://www.hackerrank.com/certificates/92c7604b53f7",
-    downloadUrl: "https://www.hackerrank.com/certificates/92c7604b53f7"
+    credentialUrl: "https://www.hackerrank.com/certificates/92c7604b53f7"
   },
   {
     id: 7,
@@ -70,8 +64,7 @@ const certifications = [
     issueDate: "June 2025",
     credentialId: "4fc61a4b37dcb7cd71f13985076fc9ba",
     image: "https://res.cloudinary.com/dfc8a9imb/image/upload/v1754760584/aicte_virtual_intership_kiqcnl.png",
-    credentialUrl: "https://drive.google.com/file/d/1rs08f3v5M6_ZKq3_-M7mZYD5yJ8FBmeW/view?usp=sharing",
-    downloadUrl: "https://drive.google.com/file/d/1rs08f3v5M6_ZKq3_-M7mZYD5yJ8FBmeW/view?usp=sharing"
+    credentialUrl: "https://drive.google.com/file/d/1rs08f3v5M6_ZKq3_-M7mZYD5yJ8FBmeW/view?usp=sharing"
   },
   {
     id: 8,
@@ -80,8 +73,7 @@ const certifications = [
     issueDate: "2025",
     credentialId: "",
     image: "https://res.cloudinary.com/dfc8a9imb/image/upload/v1754760776/cybersecurity_opsk8p.png",
-    credentialUrl: "#",
-    downloadUrl: "#"
+    credentialUrl: "#"
   }
 ];
 
@@ -96,11 +88,6 @@ export const CertificationsSection = () => {
     setSelectedCert(null);
   };
 
-  const handleDownload = (cert) => {
-    if (cert.downloadUrl && cert.downloadUrl !== "#") {
-      window.open(cert.downloadUrl, '_blank');
-    }
-  };
 
   return (
     <>
@@ -166,14 +153,6 @@ export const CertificationsSection = () => {
                       >
                         <Eye size={20} />
                       </button>
-                      <button
-                        onClick={() => handleDownload(cert)}
-                        className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                        title="Download Certificate"
-                        disabled={cert.downloadUrl === "#"}
-                      >
-                        <Download size={20} />
-                      </button>
                       <a
                         href={cert.credentialUrl}
                         target="_blank"
@@ -205,15 +184,6 @@ export const CertificationsSection = () => {
               <X size={24} />
             </button>
 
-            {/* Download Button */}
-            <button
-              onClick={() => handleDownload(selectedCert)}
-              className="absolute -top-12 right-12 p-2 text-white hover:text-primary transition-colors duration-300 z-10"
-              title="Download"
-              disabled={selectedCert.downloadUrl === "#"}
-            >
-              <Download size={24} />
-            </button>
 
             {/* Certificate Content */}
             <div className="bg-white rounded-lg overflow-hidden shadow-2xl">

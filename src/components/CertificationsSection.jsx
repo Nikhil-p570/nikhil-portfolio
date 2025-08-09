@@ -9,7 +9,7 @@ const certifications = [
     issuer: "Amazon Web Services (AWS)",
     issueDate: "July 2025",
     credentialId: "",
-    image: "", // Space for cloud URL
+    image: "https://res.cloudinary.com/dfc8a9imb/image/upload/v1754760308/nikhil_aws-ai_ml-scholar_badge_m3sxmx.webp",
     credentialUrl: "https://cdn.getblueshift.com/bee/images/ed5b8755-0989-4944-9ca5-287bb68e4a22/Certification%20Badge%2010_1.jpg",
     downloadUrl: "https://cdn.getblueshift.com/bee/images/ed5b8755-0989-4944-9ca5-287bb68e4a22/Certification%20Badge%2010_1.jpg"
   },
@@ -19,7 +19,7 @@ const certifications = [
     issuer: "Amazon Web Services (AWS)",
     issueDate: "July 2025",
     credentialId: "6ccff52c-3823-49b6-a6b4-a9c2d5c3d3bc",
-    image: "", // Space for cloud URL
+    image: "https://res.cloudinary.com/dfc8a9imb/image/upload/v1754760308/aws-educate-machine-learning-foundations_lljz5o.png",
     credentialUrl: "https://www.credly.com/earner/earned/badge/6ccff52c-3823-49b6-a6b4-a9c2d5c3d3bc",
     downloadUrl: "https://www.credly.com/earner/earned/badge/6ccff52c-3823-49b6-a6b4-a9c2d5c3d3bc"
   },
@@ -29,7 +29,7 @@ const certifications = [
     issuer: "Udacity",
     issueDate: "July 2025",
     credentialId: "07ffeaac-5966-11f0-96d3-8f73ca1868f4",
-    image: "", // Space for cloud URL
+    image: "https://res.cloudinary.com/dfc8a9imb/image/upload/v1754761021/intro_to_gen_ai_exobh3.png",
     credentialUrl: "https://www.udacity.com/certificate/e/07ffeaac-5966-11f0-96d3-8f73ca1868f4",
     downloadUrl: "https://www.udacity.com/certificate/e/07ffeaac-5966-11f0-96d3-8f73ca1868f4"
   },
@@ -39,7 +39,7 @@ const certifications = [
     issuer: "HackerRank",
     issueDate: "July 2025",
     credentialId: "",
-    image: "", // Space for cloud URL
+    image: "https://res.cloudinary.com/dfc8a9imb/image/upload/v1754761232/java_hackerrank_x7azmf.png",
     credentialUrl: "https://www.hackerrank.com/certificates/9426f7efa28a",
     downloadUrl: "https://www.hackerrank.com/certificates/9426f7efa28a"
   },
@@ -49,7 +49,7 @@ const certifications = [
     issuer: "HackerRank",
     issueDate: "July 2025",
     credentialId: "",
-    image: "", // Space for cloud URL
+    image: "https://res.cloudinary.com/dfc8a9imb/image/upload/v1754761230/problem_solvinghackerrank_oiwmjt.png",
     credentialUrl: "https://www.hackerrank.com/certificates/bb13cb3038a4",
     downloadUrl: "https://www.hackerrank.com/certificates/bb13cb3038a4"
   },
@@ -59,7 +59,7 @@ const certifications = [
     issuer: "HackerRank Campus Club, AUFS",
     issueDate: "July 2025",
     credentialId: "",
-    image: "", // Space for cloud URL
+    image: "https://res.cloudinary.com/dfc8a9imb/image/upload/v1754761231/python_hacker_rank_s7zzwe.png",
     credentialUrl: "https://www.hackerrank.com/certificates/92c7604b53f7",
     downloadUrl: "https://www.hackerrank.com/certificates/92c7604b53f7"
   },
@@ -69,7 +69,7 @@ const certifications = [
     issuer: "All India Council for Technical Education (AICTE)",
     issueDate: "June 2025",
     credentialId: "4fc61a4b37dcb7cd71f13985076fc9ba",
-    image: "", // Space for cloud URL
+    image: "https://res.cloudinary.com/dfc8a9imb/image/upload/v1754760584/aicte_virtual_intership_kiqcnl.png",
     credentialUrl: "https://drive.google.com/file/d/1rs08f3v5M6_ZKq3_-M7mZYD5yJ8FBmeW/view?usp=sharing",
     downloadUrl: "https://drive.google.com/file/d/1rs08f3v5M6_ZKq3_-M7mZYD5yJ8FBmeW/view?usp=sharing"
   },
@@ -79,7 +79,7 @@ const certifications = [
     issuer: "Cisco Networking Academy",
     issueDate: "2025",
     credentialId: "",
-    image: "", // Space for cloud URL
+    image: "https://res.cloudinary.com/dfc8a9imb/image/upload/v1754760776/cybersecurity_opsk8p.png",
     credentialUrl: "#",
     downloadUrl: "#"
   }
@@ -122,20 +122,23 @@ export const CertificationsSection = () => {
                 className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
               >
                 <div className="h-48 overflow-hidden bg-secondary/20 flex items-center justify-center">
-                  {cert.image ? (
+                  <div className="relative w-full h-full group">
                     <img
                       src={cert.image}
                       alt={cert.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                  ) : (
-                    <div className="text-muted-foreground text-center p-4">
-                      <div className="w-16 h-16 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
-                        <ExternalLink className="w-8 h-8 text-primary" />
-                      </div>
-                      <p className="text-sm">Certificate Image</p>
+                    {/* Hover overlay with eye icon */}
+                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <button
+                        onClick={() => handleViewCertificate(cert)}
+                        className="p-3 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-colors duration-300"
+                        title="View Full Certificate"
+                      >
+                        <Eye className="w-6 h-6 text-white" />
+                      </button>
                     </div>
-                  )}
+                  </div>
                 </div>
 
                 <div className="p-6">
@@ -214,43 +217,11 @@ export const CertificationsSection = () => {
 
             {/* Certificate Content */}
             <div className="bg-white rounded-lg overflow-hidden shadow-2xl">
-              {selectedCert.image ? (
-                <img
-                  src={selectedCert.image}
-                  alt={selectedCert.title}
-                  className="w-full h-auto max-h-[80vh] object-contain"
-                />
-              ) : (
-                <div className="p-12 text-center">
-                  <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                    <ExternalLink className="w-12 h-12 text-primary" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">
-                    {selectedCert.title}
-                  </h3>
-                  <p className="text-primary text-lg font-medium mb-2">
-                    {selectedCert.issuer}
-                  </p>
-                  <p className="text-gray-600 mb-4">
-                    Issued: {selectedCert.issueDate}
-                  </p>
-                  {selectedCert.credentialId && (
-                    <p className="text-sm text-gray-500 font-mono">
-                      Credential ID: {selectedCert.credentialId}
-                    </p>
-                  )}
-                  <div className="mt-6">
-                    <a
-                      href={selectedCert.credentialUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="cosmic-button inline-flex items-center gap-2"
-                    >
-                      View Original Certificate <ExternalLink size={16} />
-                    </a>
-                  </div>
-                </div>
-              )}
+              <img
+                src={selectedCert.image}
+                alt={selectedCert.title}
+                className="w-full h-auto max-h-[80vh] object-contain"
+              />
             </div>
           </div>
         </div>

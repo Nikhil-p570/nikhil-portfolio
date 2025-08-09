@@ -17,7 +17,7 @@ const projects = [
     image: "/projects/teamup.png",
     tags: ["JavaScript", "React.js", "Node.js", "Firebase"],
     demoUrl: "https://teamupns.vercel.app/",
-    githubUrl: "https://github.com/Subham8705/Teamup.git",
+    githubUrl: "https://github.com/Nikhil-p570/Teamup",
     }
 //   {
 //     id: 1,

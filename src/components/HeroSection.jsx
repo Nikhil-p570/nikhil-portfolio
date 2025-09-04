@@ -30,6 +30,14 @@ export const HeroSection = () => {
             <a href="#projects" className="cosmic-button">
               View My Work
             </a>
+            <a 
+              href="https://www.linkedin.com/in/nikhil-pabbisetti/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="cosmic-button ml-4"
+            >
+              LinkedIn
+            </a>
           </div>
         </div>
 
